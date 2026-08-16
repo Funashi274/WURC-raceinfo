@@ -9,3 +9,39 @@ body {
 h1 {
     color: #770000; /* 深みのあるえんじ色（早稲田カラーのような赤） */
 }
+/* --- レーススケジュールのデザイン --- */
+
+/* リスト全体を「白いカード」にする */
+.race-list {
+    list-style: none; /* ここで黒い点を消します！ */
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff; /* 背景を真っ白に */
+    border-radius: 8px; /* 箱の角を少し丸くする */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* ほんのり影をつける */
+}
+
+/* リストの各項目（行）のデザイン */
+.race-list li {
+    padding: 16px; /* 内側に余白をとる */
+    border-bottom: 1px solid #eeeeee; /* 下に薄いグレーの区切り線を引く */
+    display: flex; /* ★文字を横並びにする魔法の呪文 */
+    justify-content: space-between; /* 左右に端寄せして配置する */
+    align-items: center; /* 上下の中央に揃える */
+}
+
+/* 最後の行だけは、下の区切り線を消す */
+.race-list li:last-child {
+    border-bottom: none;
+}
+
+/* 種目名の文字デザイン */
+.race-name {
+    font-weight: bold; /* 少し太字にする */
+}
+
+/* ラウンド名の文字デザイン */
+.race-round {
+    color: #666666; /* 少し薄いグレーにする */
+    font-size: 0.9em; /* 少し文字を小さくする */
+}
