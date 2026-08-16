@@ -5,11 +5,6 @@ body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
-/* 一番大きな見出し（h1）のデザイン */
-h1 {
-    color: #770000; /* 深みのあるえんじ色（早稲田カラーのような赤） */
-}
-
 /* --- 全体のレイアウト調整（スマホとPC対応） --- */
 .container {
     max-width: 600px; /* パソコンで見ても広がりすぎないように最大幅を決める */
@@ -17,14 +12,31 @@ h1 {
     padding: 20px; /* スマホで見たときに画面の端に文字がくっつかないようにする */
 }
 
+/* --- ヘッダー（ロゴとタイトル）の横並び設定 --- */
+.header-container {
+    display: flex; /* 箱の中身（ロゴとタイトル）を横並びにする魔法の呪文 */
+    align-items: center; /* ロゴとタイトルの上下の中心を揃える */
+    margin-bottom: 20px; /* ヘッダーの下に余白を作る */
+    gap: 15px; /* ロゴとタイトルの間に15pxの隙間を空ける */
+}
+
 /* --- トップ画像（ロゴ）のデザイン --- */
 .header-image {
-    max-width: 200px; /* ロゴの最大幅を200pxに制限する */
-    width: 100%; /* スマホなどの小さな画面では画面幅に合わせる */
-    height: auto; /* 高さを自動調整する */
-    display: block;
-    margin: 0 auto 20px auto; /* 画像を中央に配置し、下に余白を作る */
+    max-width: 80px; /* 横並びにするため、ロゴのサイズを固定 */
+    height: auto; 
     border-radius: 8px; /* 好みに合わせて画像の角を少し丸くしています */
+    flex-shrink: 0; /* タイトルが長くなってもロゴが潰れないようにする */
+}
+
+/* 一番大きな見出し（h1）のデザイン */
+h1 {
+    color: #770000; /* 深みのあるえんじ色（早稲田カラーのような赤） */
+    margin: 0; /* 不要な余白を消す */
+    line-height: 1.3; /* 行間を少し開けて、改行された時も読みやすくする */
+    
+    /* ★ここが画面幅に合わせて文字サイズを自動調整する魔法です */
+    /* 最小1.2rem、基本は画面幅の5%＋ロゴ幅を考慮、最大1.8rem で伸び縮みします */
+    font-size: clamp(1.2rem, 5vw, 1.8rem); 
 }
 
 /* --- YouTube動画をスマホに合わせる魔法 --- */
@@ -32,6 +44,7 @@ iframe {
     width: 100%; /* 横幅を画面にぴったり合わせる */
     height: auto; /* 高さを自動調整する */
     aspect-ratio: 16 / 9; /* 縦横の比率をYouTubeの標準サイズに固定する */
+    margin-bottom: 20px; /* 動画の下に余白を作る */
 }
 
 /* --- レーススケジュールのデザイン --- */
@@ -50,7 +63,7 @@ iframe {
 .race-list li {
     padding: 16px; /* 内側に余白をとる */
     border-bottom: 1px solid #eeeeee; /* 下に薄いグレーの区切り線を引く */
-    display: flex; /* ★文字を横並びにする魔法の呪文 */
+    display: flex; /* 文字を横並びにする魔法の呪文 */
     justify-content: space-between; /* 左右に端寄せして配置する */
     align-items: center; /* 上下の中央に揃える */
 }
