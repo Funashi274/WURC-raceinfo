@@ -83,3 +83,34 @@ iframe {
     color: #666666; /* 少し薄いグレーにする */
     font-size: 0.9em; /* 少し文字を小さくする */
 }
+
+/* --- タブメニューのデザイン --- */
+.tab-menu {
+    display: flex; /* 横並びにする */
+    gap: 10px; /* タブ同士の隙間 */
+    margin-bottom: 20px; /* タブの下に余白を作る */
+}
+
+.tab-item {
+    flex: 1; /* 2つのタブが均等の幅に広がるようにする */
+    text-align: center; /* 文字を真ん中に寄せる */
+    padding: 10px 0; /* 上下の厚み */
+    background-color: #ffffff; /* 通常時の背景色（白） */
+    color: #333333; /* 文字の色 */
+    text-decoration: none; /* 下線を消す */
+    font-weight: bold; /* 太字にする */
+    border-radius: 6px; /* 角を少し丸くする */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* ほんのり影をつける */
+    transition: background-color 0.2s; /* 色が変わるときのエフェクト */
+}
+
+/* 今開いているページのタブのデザイン（アクティブ状態） */
+.tab-item.active {
+    background-color: #770000; /* 早稲田カラーのえんじ色 */
+    color: #ffffff; /* 文字を白くする */
+}
+
+/* マウスを載せたときのデザイン */
+.tab-item:hover {
+    opacity: 0.9;
+}
