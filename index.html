@@ -24,7 +24,23 @@
         </div>
         <!-- ▲ ここまで ▲ -->
     
-    <p>まもなく発艇・あと6時間</p>
+  <!-- ▼ ここからカウントダウン部分 ▼ -->
+        <div class="countdown-box">
+            <div class="countdown-days">
+                <span id="days">--</span>
+                <span class="days-label">DAYS 日</span>
+            </div>
+            <div class="countdown-divider"></div>
+            <div class="countdown-time-area">
+                <div class="countdown-title">レース初日まで</div>
+                <div class="countdown-numbers">
+                    <div><span id="hours">--</span><span class="time-unit">時間</span></div>
+                    <div><span id="minutes">--</span><span class="time-unit">分</span></div>
+                    <div><span id="seconds">--</span><span class="time-unit">秒</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- ▲ カウントダウンここまで ▲ -->
 
     <!-- テスト用動画のコード -->
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ya2YQLYeeQk?si=H3ssvLasJvgviMGN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -44,4 +60,36 @@
     <!-- ↑↑↑ 全体を囲む「透明な箱」の終わり ↑↑↑ -->
     </div>
 </body>
+<script>
+    // ▼ レース初日の日時をここに設定してください（例: 2026年9月1日 09:00:00）
+    const raceDate = new Date('2026-08-27T09:00:00');
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = raceDate - now;
+
+        if (diff <= 0) {
+            document.querySelector('.countdown-box').innerHTML = '<div style="text-align:width:100%; font-weight:bold;">レース初日を迎えました！</div>';
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60 * 60 / 60) / 1000 * 60); // 修正: 分の計算
+        // 正確な計算式に直します
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
+
+</body>
+</html>
 </html>

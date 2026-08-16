@@ -114,3 +114,122 @@ iframe {
 .tab-item:hover {
     opacity: 0.9;
 }
+/* --- 選手紹介ページのデザイン --- */
+
+/* カード全体を並べる箱 */
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* カード同士の隙間 */
+}
+
+/* 個別の選手カード（白い箱） */
+.member-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 選手の写真 */
+.member-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* 写真を丸くする */
+    object-fit: cover;
+    flex-shrink: 0;
+    background-color: #ddd; /* 画像がないときの仮の背景色 */
+}
+
+/* 選手の詳細情報 */
+.member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.member-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333333;
+}
+
+.member-event {
+    font-size: 0.85em;
+    color: #770000; /* えんじ色で種目を目立たせる */
+    font-weight: bold;
+}
+
+.member-comment {
+    font-size: 0.9em;
+    color: #666666;
+    margin: 0;
+}
+/* --- カウントダウンタイマーのデザイン --- */
+.countdown-box {
+    background-color: #1a1a24; /* ダークな背景色 */
+    color: #ffffff;
+    border: 1px solid #770000; /* えんじ色の枠線 */
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-days {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+#days {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #f3e5ab; /* 薄いゴールド・クリーム系の数字色 */
+    line-height: 1;
+}
+
+.days-label {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
+
+.countdown-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #444455;
+}
+
+.countdown-time-area {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.countdown-title {
+    font-size: 0.85rem;
+    color: #f3e5ab;
+}
+
+.countdown-numbers {
+    display: flex;
+    gap: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.countdown-numbers span:not(.time-unit) {
+    font-family: monospace; /* デジタルっぽく数字の幅を揃える */
+}
+
+.time-unit {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    margin-left: 2px;
+}
