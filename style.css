@@ -2,6 +2,7 @@
 body {
     background-color: #c9ddb8; /* ほんのり薄いグレーの背景 */
     color: #333333; /* 読みやすい濃いグレーの文字 */
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 /* 一番大きな見出し（h1）のデザイン */
